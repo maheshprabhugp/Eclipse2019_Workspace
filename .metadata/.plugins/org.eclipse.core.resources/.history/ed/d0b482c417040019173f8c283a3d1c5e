@@ -1,0 +1,57 @@
+package com.thread.example;
+
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+
+public class ThreadExampleMain {
+
+	private static final int NTHREDS = 10;
+
+	public static void main(String[] args) throws InterruptedException {
+		//executorExample();
+		deadLock();
+		System.out.println("Deadlock thread ends");
+	}
+	
+	private static void callableExample() throws InterruptedException, ExecutionException {
+		ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
+		MyCallable task = new MyCallable();
+		Future<Long> future = executor.submit(task);
+		System.out.println(future.get());
+		
+	}
+	
+	private static void deadLock() {
+		MyDeadlock task = new MyDeadlock();
+		Thread workerOne = new Thread(task);
+		Thread workerTwo = new Thread(task);
+		workerOne.start();
+		workerTwo.start();
+		
+	}
+	
+	private static void executorExample() throws InterruptedException {
+		
+		ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
+		Runnable worker = new MyRunnable(100);
+		System.out.println("Available Processor : " + Runtime.getRuntime().availableProcessors());
+		System.out.println("Free Memory : " + Runtime.getRuntime().freeMemory());
+		System.out.println("Total Memory : " + Runtime.getRuntime().totalMemory());
+		System.out.println("Max Memory : " + Runtime.getRuntime().maxMemory());
+		for (int i = 0; i < 500; i++) {
+			//Runnable worker = new MyRunnable(100);
+			executor.execute(worker);
+		}
+		// This will make the executor accept no new threads
+		// and finish all existing threads in the queue
+		executor.shutdown();
+		// Wait until all threads are finish
+		executor.awaitTermination(10, TimeUnit.HOURS);
+		System.out.println("Finished Runnable threads");
+
+	}
+
+}

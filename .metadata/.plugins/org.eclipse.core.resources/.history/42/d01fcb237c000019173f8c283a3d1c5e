@@ -1,0 +1,14 @@
+package com.thread.example;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class ThreadExampleMain {
+	
+	private static final int NTHREDS = 10;
+	
+	public static void main(String[] args) {
+		ExecutorService executor = Executors.newFixedThreadPool(NTHREDS);
+	}
+
+}

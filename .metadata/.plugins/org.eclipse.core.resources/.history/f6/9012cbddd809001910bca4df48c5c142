@@ -1,0 +1,142 @@
+package com.java8.features;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.function.Consumer;
+import java.util.stream.Collectors;
+
+public class Java8ForEachExample {
+
+	private static void traverseForEach() {
+
+		List<String> list = new LinkedList<String>();
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		list.add("D");
+
+		list.forEach((String s) -> {
+			System.out.println("Each list element : " + s);
+		});
+
+		Map<String, String> map = new HashMap<>();
+		map.put(null, "A");
+		map.put("B", "B");
+		map.put("C", "C");
+		map.put("D", "D");
+
+		map.forEach((String key, String value) -> {
+			System.out.println("Map key : " + key + " Map value : " + value);
+		});
+
+		Set<String> set = new HashSet<>();
+		set.add(null);
+		set.add("B");
+		set.add("C");
+		set.add("D");
+
+		set.forEach((String s) -> {
+			System.out.println("Set element : " + s);
+		});
+
+		Map<String, String> treeMap = new TreeMap<String, String>();
+		treeMap.put("A", "A");
+		treeMap.put("B", "B");
+		treeMap.put("C", "C");
+		treeMap.put("D", "D");
+
+		treeMap.forEach((String key, String value) -> {
+			System.out.println("Tree key : " + key + " Tree Value " + value);
+		});
+
+	}
+
+	private static void stream() {
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+		List<Integer> square = numbers.stream().map(a -> a * a).collect(Collectors.toList());
+		square.forEach((Integer i) -> {
+			System.out.println("Stream I : " + i);
+		});
+
+		List<String> names = Arrays.asList("Reflection", "Reflection", "Collection", "Stream");
+		List<Boolean> mapOut = names.stream().map(s -> s.startsWith("S")).collect(Collectors.toList());
+		mapOut.forEach((Boolean b) -> {
+			System.out.println("Boolean b : " + b);
+		});
+		names.stream().filter(name -> name.startsWith("S") || name.startsWith("R"))
+				.forEach((String n) -> System.out.println("FilterOut name: " + n));
+
+		Set<String> sets = names.stream().sorted().distinct().collect(Collectors.toSet());
+		sets.forEach((String set) -> System.out.println("Print set value : " + set));
+
+		numbers.stream().filter(number -> number % 2 == 0).reduce(0, (ans, i) -> ans + i);
+		numbers.forEach((Integer i) -> System.out.println("Reduced numbers : " + i));
+
+		int vals[] = { 2, 4, 6, 8, 10, 12, 14, 16 };
+		int sum = Arrays.stream(vals).sum();
+		System.out.println("IntStream sum : " + sum);
+		
+		long n = Arrays.stream(vals).count();
+        System.out.printf("The number of values : %d%n", n);     
+
+	}
+
+	public static void main(String[] args) {
+
+		// traverseForEach();
+		stream();
+
+		/*
+		 * // creating sample Collection List<Integer> myList = new
+		 * ArrayList<Integer>(); for (int i = 0; i < 10; i++) myList.add(i);
+		 * 
+		 * // traversing using Iterator Iterator<Integer> it = myList.iterator(); while
+		 * (it.hasNext()) { Integer i = it.next(); System.out.println("Iterator Value::"
+		 * + i); }
+		 */
+		// traversing through forEach method of Iterable with anonymous class
+		/*
+		 * myList.forEach(new Consumer<Integer>() {
+		 * 
+		 * public void accept(Integer t) {
+		 * System.out.println("forEach anonymous class Value::" + t); }
+		 * 
+		 * });
+		 * 
+		 * Consumer<Integer> c = (Integer) -> {
+		 * System.out.println("forEach anonymous class Value::" ); };
+		 * 
+		 */
+		/*
+		 * Integer a = 100; myList.forEach((Integer i) -> {
+		 * System.out.println("forEach anonymous class Value::" + i);
+		 * System.out.println(a); });
+		 * 
+		 * Map map = new HashMap<String, String>();
+		 */
+
+		// traversing with Consumer interface implementation
+		/*
+		 * MyConsumer action = new MyConsumer(); myList.forEach(action);
+		 */
+
+	}
+
+}
+
+//Consumer implementation that can be reused
+class MyConsumer implements Consumer<Integer> {
+
+	public void accept(Integer t) {
+		System.out.println("Consumer impl Value::" + t);
+	}
+
+}

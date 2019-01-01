@@ -1,0 +1,50 @@
+package com.basic;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class QuickWorkOut implements Runnable {
+	static enum enumExample {
+		APPLE, BOY, CAT, DOG
+	}
+	
+	HashMap<String, String> map = new HashMap<>();
+
+	public static void main(String[] args) {
+		/*
+		 * List<String> list = new ArrayList<String>();
+		 * System.out.println(Pattern.matches("\".*\\\\d+.*\"", "cars: 2,"));
+		 */
+		//QuickWorkOut thread1 = new QuickWorkOut();
+		QuickWorkOut thread2 = new QuickWorkOut();
+		Thread th1 = new Thread(thread2);
+		Thread th2 = new Thread(thread2);
+		
+		th1.start();
+		th2.start();
+		
+		//enumExample.APPLE;
+	}
+	
+	private void hashMap() {
+		
+	}
+
+	public void run() {
+		
+		map.put("1", "1");
+		map.put("2", "1");
+		map.put("3", "1");
+		map.put("4", "1");
+		map.put("5", "1");
+
+		Integer i = 1;
+		i = i + 1;
+		i = i + 1;
+
+		System.out.println(i + "\n");
+		System.out.println("Map prints : " + map.entrySet().stream().forEach((Set<Map.Entry<K,V>> mapEntry) -> System.out.println("")));
+	}
+
+}

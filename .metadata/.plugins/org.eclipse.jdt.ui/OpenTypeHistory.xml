@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+<typeInfo handle="=ConsumeRestServiceGuide/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.lang(Throwable.class[Throwable" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=ConsumeRestServiceGuide/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.io(IOException.class[IOException" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=ConsumeRestServiceGuide/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.lang(ClassCastException.class[ClassCastException" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=ConsumeRestServiceGuide/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.lang(OutOfMemoryError.class[OutOfMemoryError" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=Actuator/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.util(HashMap.class[HashMap" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=Actuator/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.util.concurrent(ConcurrentHashMap.class[ConcurrentHashMap" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=Actuator/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.util.function(Consumer.class[Consumer" modifiers="1537" timestamp="1480340244851"/>
+<typeInfo handle="=Actuator/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;com.sun.org.apache.xpath.internal.operations(String.class[String" modifiers="33" timestamp="1480340244851"/>
+<typeInfo handle="=Actuator/C:\/Program Files\/Java\/jdk1.8.0_111\/jre\/lib\/rt.jar&lt;java.lang(String.class[String" modifiers="49" timestamp="1480340244851"/>
+</typeInfoHistroy>

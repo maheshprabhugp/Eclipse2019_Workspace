@@ -1,0 +1,25 @@
+Description:
+This JSON to XML converter application converts all the JSON samples given in the specification document to equivalent XML messages. 
+The same is tested in JUnits. This project has minimum functionality to complete the task in 6-8 hours.
+
+Exclusions:
+1. I haven't used Lexical parsing to validate syntax. I also didn't tokenize the input JSON file by reading character by character. 
+Hence for example, below line will not be processed sucessfully if there is '\n' in middle even though its grammatically correct.
+                  VALID:
+                    "friends": ["Joe", {"firstName": "Sue","lastName": "Jones"}]
+                  INVALID:
+                    "friends": ["Joe", {
+                    "firstName": "Sue","lastName": "Jones"}]
+
+2. I haven't developed any validation framework, exception management, logging.
+
+3. Negative scenarios are not tested
+
+Deployment:
+
+1. The project is developed in Eclipse.
+
+2. Import the project into Eclipse from GIT
+
+3. Run the JUnit test cases. This will convert all the JSON files in \src\test\resources\json and verify the generated XML files 
+against respective \src\test\resources\xml

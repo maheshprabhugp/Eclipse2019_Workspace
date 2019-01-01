@@ -1,0 +1,21 @@
+package com.thread.example;
+
+public class MyRunnable implements Runnable {
+	
+	private Long countUntil;
+	
+	MyRunnable(long countUntil) {
+        this.countUntil = countUntil;
+    }
+
+	@Override
+	public void run() throws Exception{
+		/*long sum = 0;
+        for (long i = 1; i < countUntil; i++) {
+            sum += i;
+        }*/
+        System.out.println(countUntil);
+        countUntil = new Long(1000);
+	}
+
+}

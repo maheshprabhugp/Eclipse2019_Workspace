@@ -1,0 +1,29 @@
+package com.thread.example;
+
+public class MyDeadlock implements Runnable {
+	String s = "HAI";
+
+	@Override
+	public void run() {
+		resourceOne();
+		resourceTwo();
+	}
+
+	private void resourceOne() {
+		synchronized (this) {
+			synchronized (s) {
+				System.out.println("SharedResourceTwo Begins ...");
+			}
+		}
+	}
+
+	private void resourceTwo() {
+		synchronized (s) {
+			synchronized (this) {
+				System.out.println("SharedResourceTwo Begins ...");
+				System.out.println("SharedResourceTwo Ends ...");
+
+			}
+		}
+	}
+}

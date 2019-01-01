@@ -1,0 +1,26 @@
+package com.basic;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+
+public class QuickWorkOut {
+	enum enumExample {
+		APPLE, BOY, CAT, DOG
+	}
+
+	public static void main(String[] args) {
+		List<String> list = new ArrayList<String>();
+		System.out.println(Pattern.matches("\".*\\\\d+.*\"", "cars: 2,"));
+	}
+	
+	private void add {
+			  
+			  Integer i = 1;
+			  i = i + 1;
+			  i= i +1;
+
+		    System.out.println(i+"\n");
+	}
+
+}

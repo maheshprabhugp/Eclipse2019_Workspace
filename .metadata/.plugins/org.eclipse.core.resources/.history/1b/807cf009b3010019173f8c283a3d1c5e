@@ -1,0 +1,11 @@
+package com.thread.example;
+
+public class MyDeadlock implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

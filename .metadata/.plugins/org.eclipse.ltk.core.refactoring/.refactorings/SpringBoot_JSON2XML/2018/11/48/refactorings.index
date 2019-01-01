@@ -1,0 +1,39 @@
+1543149261728	Delete element
+1543150367432	Copy files
+1543150381168	Copy files
+1543150390234	Delete elements
+1543150398568	Rename resource 'boolean.json'
+1543150406089	Rename resource 'NestedBoolean.json'
+1543150416556	Rename resource 'NestedNumbers.json'
+1543150425473	Rename resource 'NestedString.json'
+1543150432248	Rename resource 'SingleArray.json'
+1543150441381	Rename resource 'SingleNumber.json'
+1543150450404	Rename resource 'String.json'
+1543150640818	Copy files
+1543158241226	Move 'example.xml' to 'xml'
+1543158261211	Move 'example.xml' to 'workingcopy'
+1543158269285	Copy file
+1543158626368	Rename local variable 'verifyBooleanXMLFile'
+1543158901136	Rename method 'booleanTypeTrue'
+1543158914869	Rename method 'booleanTypeFalse'
+1543159310506	Delete element
+1543159981113	Delete element
+1543160010438	Copy file
+1543160123497	Rename local variable 'booleanJSONFile'
+1543162418685	Copy file
+1543162434107	Rename resource 'Number.json'
+1543162447354	Copy file
+1543165897809	Rename method 'nestedNumberType'
+1543210783962	Copy file
+1543252959633	Copy file
+1543254287069	Delete element
+1543255241912	Delete element
+1543255467540	Rename resource 'null.json'
+1543255479219	Rename resource 'null.xml'
+1543255485985	Copy file
+1543256218065	Copy file
+1543256599884	Copy file
+1543256611526	Copy file
+1543256621934	Copy file
+1543378009807	Rename method 'findJSONPattern'
+1543379944652	Copy file

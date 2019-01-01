@@ -1,0 +1,83 @@
+package com.basic;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+
+class Base {
+	public void fun() {
+		System.out.println("Base fun");
+	}
+}
+
+class Derived extends Base {
+	public void fun() {
+		System.out.println("Derived fun");
+	}
+	
+	protected void accessProvider() {
+		super.fun();
+	}
+
+}
+
+public class QuickWorkOut implements Runnable {
+	enum enumExample {
+		// APPLE("1"), BOY("2"), CAT("3"), DOG("4");
+		APPLE(1), BOY(2), CAT(3), DOG(4);
+		private int value;
+
+		private int getValue() {
+			return value;
+		}
+
+		private enumExample(int value) {
+			this.value = value;
+		}
+	}
+
+	Map<String, String> map = new ConcurrentHashMap<>();
+
+	public static void main(String[] args) {
+		
+		Derived derived = new Derived();
+		derived.accessProvider();
+		/*
+		 * List<String> list = new ArrayList<String>();
+		 * System.out.println(Pattern.matches("\".*\\\\d+.*\"", "cars: 2,"));
+		 */
+		// QuickWorkOut thread1 = new QuickWorkOut();
+		QuickWorkOut thread2 = new QuickWorkOut();
+		Thread th1 = new Thread(thread2);
+		Thread th2 = new Thread(thread2);
+
+		th1.start();
+		th2.start();
+
+		enumExample.APPLE.getValue();
+	}
+
+	private void hashMap() {
+
+	}
+
+	public void run() {
+
+		map.put("1", "1");
+		map.put("2", "2");
+		map.put("3", "3");
+		map.put("4", "4");
+		map.put("5", "5");
+		// Null key and null value is not allowed in Concurrent HashMap
+		//map.put(null, "6");
+
+		Integer i = 1;
+		i = i + 1;
+		i = i + 1;
+
+		System.out.println(i + "\n");
+
+		map.entrySet().stream().forEach((Map.Entry<String, String> mapEntry) -> System.out
+				.println("" + mapEntry.getKey() + " " + mapEntry.getValue()));
+	}
+
+}
